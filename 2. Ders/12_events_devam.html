@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            border: 3px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="tikla" ondblclick="tikla()">Tıklanabilir Öğe</h1>
+    <p id="paragraf"></p>
+    <script>
+        let b = document.getElementById("paragraf")
+        function tikla()
+        {
+            b.innerHTML = "Tıklandı"
+        }
+
+        /*
+            Tüm olayları incelemek isterseniz:
+                https://www.w3schools.com/jsref/dom_obj_event.asp
+        */
+        
+    </script>
+</body>
+</html>
