@@ -1,3 +1,4 @@
+// Bu şekilde tanımlama tercih edilmez
 let sayi = new Number()
 let bool = new Boolean()
 let metin = new String()
