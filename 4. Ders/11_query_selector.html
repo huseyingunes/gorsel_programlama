@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="paragraf">
+        Merhaba <span>Dünya</span><br>
+        Merhaba <span class="mavi">Balıkesir</span>
+    </p>
+    <span class="mavi">Bu da başka bir metin</span>
+    <script>
+        const paragrafin_icindeki_mavi = document.querySelector("p>.mavi")
+        const paragrafin_icindeki_maviler = document.querySelectorAll("span.mavi")
+        console.log(paragrafin_icindeki_maviler)
+        paragrafin_icindeki_mavi.innerHTML = "asdfasd";
+        Array.from(paragrafin_icindeki_maviler).forEach((pim) => {
+            pim.innerHTML = "Masmavi";
+        })
+    </script>
+</body>
+</html>
