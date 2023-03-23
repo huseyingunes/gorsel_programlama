@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #kutu{
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            border: 5px solid darkcyan;
+            position: fixed;
+            left: 10px;
+            top: 10px;
+            transition:left 1s linear;
+            transition:top 1s linear;
+        }
+    </style>
+</head>
+<body>
+    <div id="kutu"></div>
+    <script>
+        let kutu = document.getElementById("kutu");
+        let uzaklik = 10;
+        let sayac = 1;
+        setInterval(function(){
+            sayac++;
+            let uzaklik_piksel = (uzaklik * sayac) + "px"
+            kutu.style.left = uzaklik_piksel;
+            kutu.style.top = uzaklik_piksel;
+            console.log(uzaklik * sayac)
+        }, 1000);
+    </script>
+</body>
+</html>

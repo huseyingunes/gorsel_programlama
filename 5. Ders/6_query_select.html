@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <ul id="mutfak_gerecleri"> Mutfak Gereçleri
+            <li>Çatal</li>
+            <li>Bıçak</li>
+            <li>Bardak
+                <ul id="bardaklar">
+                    <li class="bardak">Çay Bardağı</li>
+                    <li class="bardak">Su Bardağı
+                        <ol>
+                            <li>Büyük Su Bardağı</li>
+                            <li>Küçük Su Barda</li>
+                        </ol>
+                    </li>
+                    <li class="bardak">Meyve Suyu Bardağı</li>
+                </ul>
+            </li>
+            <li>Tabakk</li>
+        </ul>
+    
+        <script>
+            // Küçük su barda yazan yeri bardağı olarak düzeltin
+            // Tabakk yazan yeri de düzeltin
+            let mutfak_gerecleri = document.getElementById("mutfak_gerecleri")
+            let tum_mutfak_gerecleri = document.querySelectorAll("li")
+            console.log(tum_mutfak_gerecleri)
+
+            /*
+            let a = mutfak_gerecleri.firstElementChild
+            console.log(a.innerHTML)
+    
+            let bardaklar = mutfak_gerecleri.children[2]
+            let kucuk_su_bardagi = bardaklar.firstElementChild.children[1].firstElementChild.children[1]
+            kucuk_su_bardagi.innerHTML = "Küçük Su Bardağı"
+            
+    
+            let tabak = mutfak_gerecleri.lastElementChild
+            tabak.childNodes[0].nodeValue = "Tabak"
+    */
+        </script>
+    </body>
+    </html>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
