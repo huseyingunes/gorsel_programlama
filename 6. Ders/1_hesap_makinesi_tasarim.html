@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hesap Makinesi</title>
+    <style>
+        .dugme{
+            width:25px;
+            background-color: firebrick;
+            color:white;
+            /*outline: none;*/
+            /*border:none;*/
+        }
+        #sonuc{
+            border: 2px solid black;
+            display: inline;
+        }
+        table, td, tr, th{
+            border-collapse: collapse;
+            border: 2px solid black;
+            margin: 5px;
+            padding: 2px;
+        }
+        #sonuc_alani{
+            text-align: right;
+        }
+        
+    </style>
+</head>
+<body>
+        <fieldset>
+            <legend>Hesap Makinesi</legend>
+            <table border="2">
+                <tr style="height:25px">
+                    <th colspan="4" id="sonuc_alani"></th>
+                    <th rowspan="5" id="sonuc_alani">
+                        <button id="sonuc_hesapla" class="dugme" style="height: 130px;">=</button>
+                    </th>
+                </tr>
+                <tr>
+                    <td><button class="sayi dugme">7</button></td>
+                    <td><button class="sayi dugme">8</button></td>
+                    <td><button class="sayi dugme">9</button></td>
+                    <td><button id="bol" class="islem dugme">/</button></td>
+                </tr>
+                <tr>
+                    <td><button class="sayi dugme">4</button></td>
+                    <td><button class="sayi dugme">5</button></td>
+                    <td><button class="sayi dugme">6</button></td>
+                    <td><button id="carp" class="islem dugme">*</button></td>
+                </tr>
+                <tr>
+                    <td><button class="sayi dugme">1</button></td>
+                    <td><button class="sayi dugme">2</button></td>
+                    <td><button class="sayi dugme">3</button></td>
+                    <td><button id="cikart" class="islem dugme">-</button></td>
+                </tr>
+                <tr>
+                    <td><button class="sayi dugme">0</button></td>
+                    <td><button id="temizle" class="dugme">T</button></td>
+                    <td><button class="sayi dugme">.</button></td>
+                    <td><button id="topla" class="islem dugme">+</button></td>
+                </tr>
+            </table>
+        </fieldset>
+    <script>
+        let sonuc_alani = document.getElementById("sonuc_alani");
+        var onceki_sayi = 0;
+        var islem = "";
+        function sayilaraTiklandi(sayi){
+            sonuc_alani.innerHTML = sonuc_alani.innerHTML + sayi.srcElement.innerHTML;
+        }
+
+        function islemeTiklandi(islem_nesnesi){
+            onceki_sayi = sonuc_alani.innerHTML;
+            islem = islem_nesnesi.srcElement.innerHTML;
+            sonuc_alani.innerHTML = "";
+        }
+
+        function sonucHesapla(){
+            let tam_islem = onceki_sayi + islem + sonuc_alani.innerHTML;
+            sonuc_alani.innerHTML = eval(tam_islem);
+        }
+
+        function temizle(){
+            onceki_sayi = 0;
+            islem = "";
+            sonuc_alani.innerHTML = "";
+        }
+
+        let dugmeler = document.getElementsByClassName("sayi")
+        for(var i=0; i< dugmeler.length; i++){
+            dugmeler[i].addEventListener("click", sayilaraTiklandi);
+        }
+
+        let islem_dugmeleri = document.getElementsByClassName("islem")
+        for(var i=0; i< islem_dugmeleri.length; i++){
+            islem_dugmeleri[i].addEventListener("click", islemeTiklandi);
+        }
+
+        document.getElementById("sonuc_hesapla").addEventListener("click", sonucHesapla);
+        document.getElementById("temizle").addEventListener("click", temizle);
+    </script>
+</body>
+</html>
