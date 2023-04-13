@@ -1,0 +1,19 @@
+{
+  "name": "hesap_makinesi",
+  "version": "1.0.0",
+  "description": "Ara sınav öncesi yapılan hesap makinesinin masaüstü uygulmaya dönüştürülmesi",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hesap",
+    "makinesi"
+  ],
+  "author": "Hüseyin GÜNEŞ",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "electron": "^24.1.1"
+  }
+}
