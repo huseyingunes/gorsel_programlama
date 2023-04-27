@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    
+    <meta https-equiv="Content-Security-Policy" content="default-src *;" />
+    <title>Hello World!</title>
+  </head>
+  <body>
+    <button id="dugme">Yeni Pencere Aç</button>
+    <h2 id="icerik">adsf</h2>
+
+    <script>
+        
+        document.getElementById("dugme").addEventListener("click", yeniPencereAc);
+
+        function yeniPencereAc(){
+          document.getElementById("icerik").innerHTML = Date();
+          const remote = require('electron').remote;
+          
+          const BrowserWindow = remote.BrowserWindow;
+          const win = new BrowserWindow({
+            height: 600,
+            width: 800,
+            webPreferences: {
+              nodeIntegration: true,
+              contextIsolation: false,
+              enableRemoteModule: true,
+            }
+          });
+
+          win.loadURL('yeni_pencere.html');
+        }
+
+    </script>
+  </body>
+</html>
