@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<!--
+    Pencere başlığı ve menü olmamalı
+    Giriş ekranı ufak bir bir pencere olarak ekranın tam ortasında açılmalı
+    Giriş  e tıklanınca veritabanında kontrol yapılarak hata mesajı verilecek
+        ya da index sayfasına geçilecek.
+    İndex sayfası ise kullanıcı yetkilerine uygun şekilde açılacak.
+-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -185,19 +192,70 @@ body {
       <h1 class="h3 mb-3 fw-normal">Lütfen Giriş Yapın</h1>
   
       <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <input type="email" class="form-control" id="kullanici_adi" placeholder="name@example.com">
         <label for="floatingInput">Kullanıcı Adı</label>
       </div>
       <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <input type="password" class="form-control" id="sifre" placeholder="Password">
         <label for="floatingPassword">Şifre</label>
       </div>
 
-      <button class="w-100 btn btn-lg btn-primary" type="submit">Giriş</button>
+      <button class="w-100 btn btn-lg btn-primary" type="submit" id="dgm_giris">Giriş</button>
       <p class="mt-5 mb-3 text-body-secondary">&copy; BAUN CENG 2023</p>
+      <div id="hata_bildirimi"></div>
     </form>
   </main>
   
+<div id="kapat_dugmesi_alani" style="position: fixed; top:10px; right:10px;">
+    <button type="button" class="btn btn-danger" style="font-weight:bold" id="dgm_kapat">X</button>
+</div>
+
+  <script src="baglanti.js"></script>
+    <script>
+        var dgm_kapat = document.getElementById("dgm_kapat");
+
+        dgm_kapat.addEventListener("click", function(){
+            window.close()
+        })
+
+        function createBrowserWindow() {
+            const ipc = window.require('electron').ipcRenderer;
+
+            console.log("IPC : " + ipc)
+            ipc.send('indexPenceresiniAc');  
+   
+        }
+
+        var dgm_giris = document.getElementById("dgm_giris");
+        var hata_bildirimi = document.getElementById("hata_bildirimi");
+        dgm_giris.addEventListener("click", function(){
+            event.preventDefault();
+            let kullanici_adi = document.getElementById("kullanici_adi").value;
+            let sifre = document.getElementById("sifre").value;
+           
+            let sorgu = "SELECT * FROM `kullanici` WHERE `kullanici_adi` = '"+kullanici_adi+"' AND `sifre` = '"+sifre+"'";
+            
+            baglanti.query(sorgu, function(hata, sonuc) {
+                if(hata){
+                    console.log("Sorgu yapılırken hata.");
+                    console.log(hata);
+                    return;
+                }
+                //console.log("Dönen kayıt sayısı : " + sonuc.length)
+                if (sonuc.length > 0)
+                {
+                    console.log("Kullanıcı adı ve şifre doğru")
+                    createBrowserWindow();
+                    window.close()
+                }
+                else
+                {
+                    console.log("Kullanıcı adı veya şifre yanlış...")
+                    hata_bildirimi.innerHTML = "<span class='badge text-bg-danger'>Kullanıcı adı veya şifre yanlış...</span>"
+                }
+            })
+        })
+    </script>
 
 </body>
 </html>

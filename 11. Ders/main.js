@@ -1,18 +1,19 @@
-const { app, BrowserWindow, Menu, MenuItem } = require('electron')
+const { app, BrowserWindow, Menu, MenuItem, ipcMain } = require('electron')
 const path = require('path')
 
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 1500,
-    height: 800,
+    width: 500,
+    height: 500,
     webPreferences: {
       nodeIntegration: true,
-      contextIsolation: false
-    }
+      contextIsolation: false,
+      enableRemoteModule: true
+    },
+    frame: false
   })
 
-  mainWindow.webContents.openDevTools()
 
   // and load the index.html of the app.
   mainWindow.loadFile('giris.html')
@@ -21,6 +22,26 @@ const createWindow = () => {
   // mainWindow.webContents.openDevTools()
 }
 
+const createWindowIndex = () => {
+  // Create the browser window.
+  const indexPenceresi = new BrowserWindow({
+    width: 1500,
+    height: 1000,
+    webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: false,
+      enableRemoteModule: true
+    },
+  })
+
+  indexPenceresi.loadFile('index.html')
+}
+
+  
+
+ipcMain.on("indexPenceresiniAc", (event, arg) => {
+  createWindowIndex()
+});
 
 
 // This method will be called when Electron has finished
