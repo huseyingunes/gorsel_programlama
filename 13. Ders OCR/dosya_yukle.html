@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <title>OCR İşlemleri</title>
+  <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body style="background-color: rgb(108 117 125);">
+  <div class="modal modal-signin position-static d-block bg-secondary py-5" tabindex="-1" role="dialog"
+    id="modalSignin">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content rounded-5 shadow">
+        <div class="modal-header p-5 pb-4 border-bottom-0">
+          <!-- <h5 class="modal-title">Modal title</h5> -->
+          <h2 class="fw-bold mb-0">Dosya Seçiniz</h2>
+
+        </div>
+
+        <div class="modal-body p-5 pt-0">
+          <div class="mb-3">
+            <label for="formFile" class="form-label">Yüklenecek dosyayı seçiniz</label>
+            <input class="form-control" type="file" id="formFile" accept="image/x-png,image/gif,image/jpeg">
+          </div>
+          <div class="mb-3">
+            <button type="button" class="btn btn-info" id="dgmDonustur">Dönüştür</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal modal-signin position-static d-block bg-secondary py-5" tabindex="-1" role="dialog"
+    id="modalSignin">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content rounded-5 shadow">
+        <div class="modal-header p-5 pb-4 border-bottom-0">
+          <!-- <h5 class="modal-title">Modal title</h5> -->
+          <h2 class="fw-bold mb-0">Çıktınız</h2>
+
+        </div>
+
+        <div class="modal-body p-5 pt-0">
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+            <textarea class="form-control" id="cikti" rows="3"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("dgmDonustur").addEventListener(
+      "click",
+      function (event) {
+        let dosyaYolu = document.getElementById("formFile").files[0].path;
+        console.log("Dosya Yolu : " + dosyaYolu)
+        let spawn = require("child_process").spawn;
+        let bat = spawn("cmd.exe", [
+          "/c",          // Argument for cmd.exe to carry out the specified script
+          "tesseract", // Path to your file
+          dosyaYolu,   // First argument
+          "d:\\b",    // n-th argument
+          //"-l",
+          //"tur"    // n-th argument
+        ]);
+        bat.stdout.on("data", (data) => {
+          console.log("1->" + data);
+        });
+
+        bat.stderr.on("data", (err) => {
+          console.log("2->" + err);
+        });
+
+        bat.on("exit", (code) => {
+
+          const fs = require('fs');
+          var ciktiTA = document.getElementById('cikti');
+
+          fs.readFile("d:\\b.txt", 'utf-8', (err, data) => {
+            ciktiTA.innerHTML = data;
+          });
+
+        });
+
+      });
+  </script>
+
+</body>
+
+</html>

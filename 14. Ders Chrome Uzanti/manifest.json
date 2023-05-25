@@ -1,0 +1,21 @@
+{
+  "name": "Rektor Kimdir Gorsunler",
+  "description": "Her turlu itina ile rektor olunur!",
+  "version": "1.0",
+  "manifest_version": 3,
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.balikesir.edu.tr/site/rektor"
+      ],
+      "css": [],
+      "js": ["js/jquery.min.js","rektor_bukucu.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_title": "Rektör Bükücü",
+    "default_icon": "simge_2.png",
+    "default_popup": "popup.html"
+  }
+}

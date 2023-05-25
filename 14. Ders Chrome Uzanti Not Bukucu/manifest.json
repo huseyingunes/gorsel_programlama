@@ -1,0 +1,22 @@
+{
+  "name": "Bol Not",
+  "description": "Her turlu itina ile not değiştirilir",
+  "version": "1.0",
+  "manifest_version": 3,
+  "content_scripts": [
+    {
+      "matches": [
+        "https://obs.balikesir.edu.tr/oibs/akademik/*"
+      ],
+      "css": [],
+      "js": ["js/jquery.min.js","not_bukucu.js"],
+      "run_at": "document_start",
+	  "all_frames": true
+    }
+  ],
+  "action": {
+    "default_title": "Not Bükücü",
+    "default_icon": "simge_2.png",
+    "default_popup": "popup.html"
+  }
+}

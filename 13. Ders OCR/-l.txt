@@ -1,0 +1,14 @@
+Metin Dosyalarinin iceriklerinin
+
+EO
+
+0 Metin dosyalar Uzerinde siralama islemi sort
+komutu ile yapilir. Bu komut satirlari verilen
+siralama kriterine gore siralar ve sonucu standart
+cikiga aktarir. Komutun temel kullanim sekli
+asagidaki gibidir :
+
+Oo sort [secenek] dosya
+
+© Dosya ismi verilmedigi takdirde veriler standart
+giristen okunacaktir.
