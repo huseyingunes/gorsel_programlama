@@ -23,7 +23,7 @@
     <div id="kutu"></div>
     <script>
         let kutu = document.getElementById("kutu");
-        let uzaklik = 10;
+        let uzaklik = 1;
         let sayac = 1;
         setInterval(function(){
             sayac++;
@@ -31,7 +31,7 @@
             kutu.style.left = uzaklik_piksel;
             kutu.style.top = uzaklik_piksel;
             console.log(uzaklik * sayac)
-        }, 1000);
+        }, 100);
     </script>
 </body>
 </html>

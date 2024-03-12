@@ -3,6 +3,10 @@ class ogrenci{
         this.ad = ad;
         this.soyad = soyad;
     }
+
+    destructor(){
+        console.log("gidiyorum...")
+    }
     yazdir(){
         console.log(this.ad + " " + this.soyad)
     }
@@ -11,3 +15,5 @@ class ogrenci{
 let yeni_ogrenci = new ogrenci("Ali", "VELİ")
 
 yeni_ogrenci.yazdir()
+
+yeni_ogrenci = null

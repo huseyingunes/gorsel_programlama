@@ -7,6 +7,8 @@ console.log(a)
 console.log(a**2) //üs alma
 console.log(a/2)
 console.log(a%2) //kalanı veriyor
+z = ~~(a/2) //bölümü veriyor
+console.log(z) 
 
 a = 5
 let b = 3

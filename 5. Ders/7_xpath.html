@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="mutfak_gerecleri"> Mutfak Gereçleri
+        <li>Çatal</li>
+        <li>Bıçak</li>
+        <li>Bardak
+            <ul id="bardaklar">
+                <li class="bardak">Çay Bardağı</li>
+                <li class="bardak">Su Bardağı
+                    <ol>
+                        <li>Büyük Su Bardağı</li>
+                        <li>Küçük Su Barda</li>
+                    </ol>
+                </li>
+                <li class="bardak">Meyve Suyu Bardağı</li>
+            </ul>
+        </li>
+        <li>Tabakk</li>
+    </ul>
+
+    <script>
+       console.log(document.evaluate("//*[@id='bardaklar']/li[2]/ol/li[1]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue);
+    </script>
+</body>
+
+</html>

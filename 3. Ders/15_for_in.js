@@ -9,3 +9,7 @@ for (let i=0, uzunluk = dizi.length; i<uzunluk; i++) {
 for (i in dizi){
     console.log(dizi[i])
 }
+
+dizi.forEach(function(i){
+    console.log(i)
+})

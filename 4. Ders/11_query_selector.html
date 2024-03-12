@@ -9,12 +9,15 @@
 <body>
     <p id="paragraf">
         Merhaba <span>Dünya</span><br>
-        Merhaba <span class="mavi">Balıkesir</span>
+        Merhaba <span class="mavi">Balıkesir Span</span>
+        Merhaba <div class="mavi">Balıkesir</div>
+        Merhaba <div class="mavi">Balıkesir 2</div>
     </p>
     <span class="mavi">Bu da başka bir metin</span>
     <script>
         const paragrafin_icindeki_mavi = document.querySelector("p>.mavi")
-        const paragrafin_icindeki_maviler = document.querySelectorAll("span.mavi")
+        const paragrafin_icindeki_maviler = document.querySelectorAll("div.mavi")
+        console.log(paragrafin_icindeki_mavi)
         console.log(paragrafin_icindeki_maviler)
         paragrafin_icindeki_mavi.innerHTML = "asdfasd";
         Array.from(paragrafin_icindeki_maviler).forEach((pim) => {

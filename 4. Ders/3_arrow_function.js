@@ -1,4 +1,4 @@
-let yeni_foknsiyon = () => console.log("Merhaba Arrow function")
+let yeni_foknsiyon = ()=> console.log("Merhaba Arrow function")
 
 yeni_foknsiyon()
 

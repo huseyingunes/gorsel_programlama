@@ -10,6 +10,7 @@ yeni_tarih.setFullYear(2099)
 console.log(yeni_tarih)
 
 let guncel_tarih = new Date(Date.now())
+
 console.log("Yıl : " + guncel_tarih.getFullYear());
 console.log("Ay : " + (guncel_tarih.getMonth() + 1));
 console.log("Gün : " + guncel_tarih.getDate());
