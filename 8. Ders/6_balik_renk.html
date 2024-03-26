@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p class="balik">1. Balık</p>
+    <p class="balik">2. Balık</p>
+    <span class="balik">3. Balık</span>
+    <span class="balik">4. Balık</span>
+    <script>
+        // sınıfı balik olan tüm elementlerin yazı rengini mavi yapan kodu yazınız.
+        let baliklar = document.getElementsByClassName("balik");
+        for (let i = 0; i < baliklar.length; i++) {
+            baliklar[i].style.color = "blue";
+        }
+       
+    </script>
+</body>
+
+</html>

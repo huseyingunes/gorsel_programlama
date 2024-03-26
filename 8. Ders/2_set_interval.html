@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="balkes" style="position:absolute">Balıkesir</div>
+    <script>
+        function yazdir(){
+            x = Math.random() * 1000;
+            y = Math.random() * 500;
+            f = Math.random() * 50 + 10;
+            r = Math.random() * 255;
+            g = Math.random() * 255;
+            b = Math.random() * 255;
+            e = document.getElementById("balkes");
+            e.style.left = x + "px";
+            e.style.top = y + "px";
+            e.style.fontSize = f + "px";
+            e.style.color = "rgb(" + r + "," + g + "," + b + ")";
+        }
+        yazdir();
+        setInterval(yazdir, 1000);
+    </script>
+</body>
+</html>

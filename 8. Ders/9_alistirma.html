@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="tarla" style="width: 200px; height: 200px; background-color: green;">Tarla</button>
+    <div class="bitki" style="width: 50px; height: 50px; background-color: red;"></div>
+    <script>
+    //    id si tarla olan düğmeye tıklandığında sınıfı bitki olan div in boyutunu 100*100 piksel e animasyonlu bir şekilde ayarlayan kodu yazınız.
+        let tarla = document.getElementById("tarla");
+        tarla.addEventListener("click", function() {
+            let bitki = document.getElementsByClassName("bitki")[0];
+            bitki.style.width = "100px";
+            bitki.style.height = "100px";
+            bitki.style.transition = "all 2s";
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button>Click me</button>
+    <div style="position:absolute; width:200px; height: 200px; background-color: aquamarine" >Balık</div>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("div").animate({left: '250px'}, { duration: 200, queue: false });
+                $("div").animate({fontSize: '72pt'}, { duration: 200});
+            });
+        });
+    </script>
+</body>
+</html>
