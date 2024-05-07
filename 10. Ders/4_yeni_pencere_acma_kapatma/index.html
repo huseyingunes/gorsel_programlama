@@ -17,20 +17,8 @@
 
         function yeniPencereAc(){
           document.getElementById("icerik").innerHTML = Date();
-          const remote = require('electron').remote;
           
-          const BrowserWindow = remote.BrowserWindow;
-          const win = new BrowserWindow({
-            height: 600,
-            width: 800,
-            webPreferences: {
-              nodeIntegration: true,
-              contextIsolation: false,
-              enableRemoteModule: true,
-            }
-          });
-
-          win.loadURL('yeni_pencere.html');
+          window.open("yeni_pencere.html", "_blank", "top=500,left=200,frame=true,nodeIntegration=yes");
         }
 
     </script>

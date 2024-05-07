@@ -1,17 +1,15 @@
 {
-  "name": "11.-ders",
+  "name": "0_yalin_proje",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron ."
   },
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "electron": "^24.2.0",
-    "firebase": "^10.11.1",
-    "mysql": "^2.18.1"
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^30.0.0"
   }
 }

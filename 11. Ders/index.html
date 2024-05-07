@@ -9,7 +9,19 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Merhaba Stok Takip</h1>
+
+    <h1 id="merhaba"></h1>
+
+<script>
+    const ipc = window.require('electron').ipcRenderer;
+    merhaba = document.getElementById("merhaba")
+    ipc.send('ben-acildim'); 
+    ipc.on('kullanici_adi_belirle', (event, arg) => {
+        merhaba.innerHTML = "Merhaba " + arg;
+    })
+
+</script>
+
     <h2>Kayıt Ekleme</h2>
 
     <form>
