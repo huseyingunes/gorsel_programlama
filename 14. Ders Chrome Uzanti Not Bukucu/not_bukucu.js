@@ -3,7 +3,7 @@ window.addEventListener("load", function load(event) {
 	//alert("deneme");
 	//let rektor_secici = $('.pi-section').find('.classToSelect')
 	setInterval(function () {
-		let ogrenciTr = $("span:contains(201613709035)").parent().parent();
+		let ogrenciTr = $("span:contains(202213709004)").parent().parent();
 		console.log(ogrenciTr);
 		ogrenciTr.children().eq(8).children().eq(0).val('75');
 		console.log(ogrenciTr.children().eq(8).children().eq(0).val());

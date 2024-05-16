@@ -6,7 +6,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://obs.balikesir.edu.tr/oibs/akademik/*"
+        "https://obs.balikesir.edu.tr/oibs/acd/*"
       ],
       "css": [],
       "js": ["js/jquery.min.js","not_bukucu.js"],

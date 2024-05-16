@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "OBS Savar",
+    "description": "Çalışmaya Paydos",
+    "version": "0.1",
+    "action": {
+      "default_icon": "simge.png"
+    },
+    "content_scripts": [
+        {
+          "run_at": "document_start",
+          "js": ["scripts/content.js"],
+          "matches": [
+            "https://obs.balikesir.edu.tr/oibs/acd/*"
+          ]
+        }
+    ]
+}
+  

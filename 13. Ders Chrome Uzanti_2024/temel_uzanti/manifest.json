@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "Merhaba Uzantılar",
+    "description": "Hüseyin Hoca'dan esintiler",
+    "version": "0.1",
+    "action": {
+      "default_popup": "merhaba.html",
+      "default_icon": "simge.png"
+    },
+    "content_scripts": [
+        {
+          "js": ["scripts/content.js"],
+          "matches": [
+            "https://www.balikesir.edu.tr/site/rektor"
+          ]
+        }
+      ]
+}
+  
